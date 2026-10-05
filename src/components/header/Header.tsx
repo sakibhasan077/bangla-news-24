@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Logo from "../../../public/assets/logo.webp";
 import Link from "next/link";
+import Navbar from "./Navbar";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
@@ -39,6 +40,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <Navbar></Navbar>
     </>
   );
 };
