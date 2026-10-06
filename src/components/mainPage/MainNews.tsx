@@ -3,12 +3,13 @@ import Image from "next/image";
 
 interface MainNews {
   news: MainNewsType[];
+  banglaDate: (date: string) => string;
 }
 
-const MainNews = ({ news }: MainNews) => {
+const MainNews = ({ news, banglaDate }: MainNews) => {
   const [left, ...other] = news;
   return (
-    <div className=" flex justify-between">
+    <div className=" flex justify-between bg-[#FAFAFA]">
       {/* left */}
       <article className="group w-full basis-[48%] overflow-hidden rounded-lg border border-[#e5e5e5] bg-white">
         {/* Image */}
@@ -37,13 +38,26 @@ const MainNews = ({ news }: MainNews) => {
           <p className="line-clamp-3 text-[15px] leading-6 text-gray-600">
             {left.description}
           </p>
+
+          {/* Date */}
+          <p className=" text-sm mt-3 text-gray-600">
+            {banglaDate(left.firstPublished)}
+          </p>
         </div>
       </article>
       {/* Right */}
       <div className="basis-[48%]">
         <ul className="rounded-lg border border-[#e5e5e5] pb-7">
           {other.slice(0, 5).map((item, idx) => (
-            <li key={item.id} className={`h-full p-3 text-[#171717] font-semibold ${idx !== 0 && "border-t  border-[#e5e5e5] "}`}><span className="mb-1 text-xs text-[#C40004] block font-semibold">{item.category}</span><span className="block font-semibold">{item.title}</span></li>
+            <li
+              key={item.id}
+              className={`h-full p-3 text-[#171717] font-semibold ${idx !== 0 && "border-t  border-[#e5e5e5] "}`}
+            >
+              <span className="mb-1 text-xs text-[#C40004] block font-semibold">
+                {item.category}
+              </span>
+              <span className="block font-semibold">{item.title}</span>
+            </li>
           ))}
         </ul>
       </div>

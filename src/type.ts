@@ -12,3 +12,8 @@ export interface MainNewsType {
   title: string;
   type: "article";
 }
+
+export interface OtherNews {
+  title: string;
+  articles: MainNewsType[];
+}
