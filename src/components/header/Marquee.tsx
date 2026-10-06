@@ -10,7 +10,6 @@ const MarqueePage = async () => {
   const res = await fetch("https://news-api-v2.vercel.app/api/news?limit=15");
   const x = await res.json();
   const resData: MarqueeType[] = x?.data;
-  console.log(resData);
   return (
     <div className="bg-[#C40004]">
       <div className="container mx-auto flex h-full items-center">
