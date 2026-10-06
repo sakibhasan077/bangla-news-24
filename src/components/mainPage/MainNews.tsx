@@ -41,7 +41,7 @@ const MainNews = ({ news, banglaDate }: MainNews) => {
 
           {/* Date */}
           <p className=" text-sm mt-3 text-gray-600">
-            {banglaDate(left.firstPublished)}
+            {left.firstPublished && banglaDate(left.firstPublished)}
           </p>
         </div>
       </article>

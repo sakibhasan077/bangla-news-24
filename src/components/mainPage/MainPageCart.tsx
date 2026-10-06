@@ -38,7 +38,7 @@ const MainPageCart = ({news,banglaDate}:MainPageCartType) => {
                 </p>
                 {/* Date */}
                 <p className=" text-xs mt-3 text-gray-600">
-                  {banglaDate(news.firstPublished)}
+                  {news.firstPublished && banglaDate(news.firstPublished)}
                 </p>
 
               </div>

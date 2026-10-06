@@ -69,7 +69,7 @@ export default async function Home() {
           </h2>
           <ul>
             {mostRead.map((item, idx) => (
-              <li className="py-3 flex">
+              <li key={item.id} className="py-3 flex">
                 <span className="text-red-700 text-[20px] leading-7 hover:text-[#c40004] font-bold">{idx + 1}</span>
                 <span className="text-base leading-5.5 hover:text-[#c40004] font-bold px-3">{item.title}</span>
               </li>
